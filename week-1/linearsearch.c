@@ -37,5 +37,21 @@
  37            return pos;
  38    }
  39    }
-                                                                                                                            5,1           Top
+  
+       output :
+           no. of  elements:5
+          array element:5
+          2
+          3
+          6
+          9
+          element to be searched:4
+          Element not found
+          
+          no. of  elements:3
+          array element:1
+          2
+          3
+          element to be searched:2
+          Element  found at 1 position
 
