@@ -1,0 +1,109 @@
+#include<stdio.h>
+  2 #include<stdlib.h>
+  3 #define SIZE 5
+  4 int top = -1;
+  5 int stack[SIZE];
+  6 void push(int ele){
+  7     stack[++top] = ele;
+  8 }
+  9 int pop(){
+ 10     return (stack[top--]);
+ 11 }
+ 12 int peek(){
+ 13     return (stack[top]);
+ 14 }
+ 15 void display(){
+ 16     int i;
+ 17     for(i = top;i>=0;i--){
+ 18         printf("%d\n",stack[i]);
+ 19     }
+ 20 }
+ 21 int main(){
+ 22     int ch,ele;
+ 23     while(1){
+ 24         printf("\n 1-push \n 2-pop \n 3-peek \n 4-display \n 5-exit \n");
+ 25         printf("enter your choice:\n");
+ 26         scanf("%d",&ch);
+ 27         switch(ch){
+ 28             case 1:if(top == SIZE -1)
+ 29                         printf("stack overflow");
+ 30                     else{
+ 31                         printf("enter element to be inserted:\n");
+ 32                         scanf("%d",&ele);
+ 33                         push(ele);
+ 34                         }
+ 35                     break;
+ 36             case 2:if(top == -1)
+ 37                         printf("stack underflow");
+ 38                     else
+ 39                         printf("deleted element is %d",pop());
+ 40                     break;
+ 41             case 3:if(top == -1)
+ 42                         printf("stack underflow");
+ 43                     else
+ 44                         printf("top element is %d",peek());
+ 45                     break;
+ 46              case 4:if(top == -1)
+ 47                         printf("stack underflow");
+ 48                     else
+ 49                         display();
+ 50                     break;
+ 51             case 5:exit(0);
+ 52         }
+ 53     }
+ 54 }
+ 55                    
+ output: 
+       1-push 
+ 2-pop 
+ 3-peek 
+ 4-display 
+ 5-exit 
+enter your choice:
+1
+enter element to be inserted:
+16
+
+ 1-push 
+ 2-pop 
+ 3-peek 
+ 4-display 
+ 5-exit 
+enter your choice:
+1
+enter element to be inserted:
+5
+
+ 1-push 
+ 2-pop 
+ 3-peek 
+ 4-display 
+ 5-exit 
+enter your choice:
+4
+5
+16
+
+ 1-push 
+ 2-pop 
+ 3-peek 
+ 4-display 
+ 5-exit 
+enter your choice:
+3
+top element is 5
+ 1-push 
+ 2-pop 
+ 3-peek 
+ 4-display 
+ 5-exit 
+enter your choice:
+2
+deleted element is 5
+ 1-push 
+ 2-pop 
+ 3-peek 
+ 4-display 
+ 5-exit 
+enter your choice:
+5
