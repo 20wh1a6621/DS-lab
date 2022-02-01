@@ -1,0 +1,60 @@
+#include<stdio.h>
+void readArray(int[],int);
+void writeArray(int[],int);
+void selectionSort(int[],int);
+void swap(int *,int*);
+int main(){
+    int a[10];
+    int n,x;
+    printf("enter no. of elements in array: \n");
+    scanf("%d",&n);
+    readArray(a,n);
+    printf("\n elements before sort:");
+    writeArray(a,n);
+    selectionSort(a,n);
+    printf("\n elements after sort:");
+    writeArray(a,n);
+}
+void readArray(int a[],int n){
+    int i;
+    printf("\n enter %d array elements:");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+}
+void writeArray(int a[],int n){
+    int i;
+    printf("\n array elements are:");
+    for(i=0;i<n;i++){
+        printf("\t%d",a[i]);
+    }
+}
+void selectionSort(int a[],int n){
+    int i,j;
+    int minpos,swap1 =0;
+    for(i=0;i<n-1;i++){
+        minpos = i;
+        for(j=i+1;j<n;j++){
+            if(a[j] > a[minpos]){
+                minpos = j;
+            }
+            printf("\n minpos = %d",minpos);
+        }
+        printf("\n swap steps = %d,exchange %d & %d",++swap1,a[i],a[minpos]);
+        swap(&a[minpos],&a[i]);
+        printf("\n after round = %d",i+1);
+        writeArray(a,n);
+    }
+}
+void swap(int *p,int *q){
+    int t;
+    t = *p;
+    *p = *q;
+    *q = t;
+}
+output:
+enter no. of elements in a array: 3
+enter 3 array elements:12
+5
+3
+sorted array: 3    5    12
